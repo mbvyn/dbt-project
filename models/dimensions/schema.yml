@@ -1,0 +1,115 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "A table containing information about customers"
+    columns:
+      - name: customer_id
+        description: "The unique identifier for each customer"
+        tests:
+          - not_null
+        meta:
+          dbt_type: int
+      - name: store_id
+        description: "The ID of the store that the customer belongs to"
+        tests:
+          - not_null
+        meta:
+          dbt_type: int
+      - name: first_name
+        description: "The first name of the customer"
+        tests:
+          - not_null
+        meta:
+          dbt_type: string
+      - name: last_name
+        description: "The last name of the customer"
+        tests:
+          - not_null
+        meta:
+          dbt_type: string
+      - name: full_name
+        description: "The full name of the customer (first name and last name combined)"
+        tests:
+          - not_null
+        meta:
+          dbt_type: string
+      - name: domain
+        description: "The domain of the customer's email address"
+        tests:
+          - not_null
+        meta:
+          dbt_type: string
+      - name: email
+        description: "The email address of the customer"
+        tests:
+          - not_null
+          - email_format
+        meta:
+          dbt_type: string
+      - name: active
+        description: "Whether the customer is active or not (1 for active, 0 for inactive)"
+        tests:
+          - not_null
+        meta:
+          dbt_type: int
+      - name: address_id
+        description: "The ID of the address associated with the customer"
+        tests:
+          - not_null
+        meta:
+          dbt_type: int
+      - name: address
+        description: "The address of the customer"
+        tests:
+          - not_null
+        meta:
+          dbt_type: string
+      - name: city_id
+        description: "The ID of the city associated with the customer's address"
+        tests:
+          - not_null
+        meta:
+          dbt_type: int
+      - name: city
+        description: "The name of the city associated with the customer's address"
+        tests:
+          - not_null
+        meta:
+          dbt_type: string
+      - name: country_id
+        description: "The ID of the country associated with the customer's address"
+        tests:
+          - not_null
+        meta:
+          dbt_type: int
+      - name: country
+        description: "The name of the country associated with the customer's address"
+        tests:
+          - not_null
+        meta:
+          dbt_type: string
+      - name: active_desc
+        description: "A string description of the customer's active status (either 'yes' or 'no')"
+        tests:
+          - not_null
+        meta:
+          dbt_type: string
+      - name: create_date
+        description: "The date the customer was created"
+        tests:
+          - not_null
+        meta:
+          dbt_type: timestamp
+      - name: last_update
+        description: "The date the customer was last updated"
+        tests:
+          - not_null
+        meta:
+          dbt_type: timestamp
+      - name: dbt_time
+        description: "The date the dbt was running"
+        tests:
+          - not_null
+        meta:
+          dbt_type: timestamp
