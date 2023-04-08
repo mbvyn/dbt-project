@@ -1,3 +1,5 @@
+{{ config(post_hook='insert into {{this}}(customer_id) VALUES (-1)') }}
+
 WITH customer AS (
     SELECT *
     FROM {{ source('stg', 'customer') }}
