@@ -125,3 +125,8 @@ sources:
       - name: country
       - name: staff
       - name: store
+      - name: film
+      - name: film_category
+      - name: category
+      - name: language
+
