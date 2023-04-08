@@ -40,3 +40,7 @@ models:
     dimensions:
       materialized: table
       +schema: dwh
+
+    facts:
+      materialized: table
+      +schema: dwh  

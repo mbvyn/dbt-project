@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: stg
+    database: postgres
+    schema: public
+    tables:
+      - name: rental
+      - name: inventory
