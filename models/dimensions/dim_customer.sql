@@ -1,3 +1,23 @@
+WITH customer AS (
+    SELECT *
+    FROM {{ source('stg', 'customer') }}
+),
+
+address AS (
+    SELECT *
+    FROM {{ source('stg', 'address') }}
+),
+
+city AS (
+    SELECT *
+    FROM {{ source('stg', 'city') }}
+),
+
+country AS (
+    SELECT * 
+    FROM {{ source('stg', 'country') }}
+)
+
 SELECT
     customer.customer_id::int,
     customer.store_id::int,

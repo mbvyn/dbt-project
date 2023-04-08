@@ -113,3 +113,15 @@ models:
           - not_null
         meta:
           dbt_type: timestamp
+
+sources:
+  - name: stg
+    database: postgres
+    schema: public
+    tables:
+      - name: customer
+      - name: address
+      - name: city
+      - name: country
+      - name: staff
+      - name: store
